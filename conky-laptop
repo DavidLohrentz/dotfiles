@@ -37,7 +37,8 @@ conky.config = {
 conky.text = [[
 [
     { "full_text": "Sw:${swap}/${swapmax} (${swapperc}%) " , "color": ${if_match ${swapperc}<01}"\#ffffff"${else}"\#ff0000"${endif} },
-    { "full_text" : "${if_up wlan0}wl01 ${addr wl01} | ${endif}" , "color": "\#ffffff" },    
+    { "full_text" : "${if_up wlan0}wl01 ${addr wl01} | ${endif}" , "color": "\#ffffff" },
+    { "full_text": "Wifi up: ${upspeed wlo1}, Down: ${downspeed wlo1}" , "color": "\#ffffff" },  
     { "full_text" : ": ${battery_percent BAT0}%" , "color": "\#ffffff" },
     { "full_text": "RAM ${memperc}%" , "color": ${if_match ${memperc}<85}"\#ffffff"${else}"\#ff0000"${endif} },
     {"full_text":"${time %b %d, %H:%M  }", "color":"\#ffffff",
