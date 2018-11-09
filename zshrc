@@ -9,13 +9,16 @@
 # [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
 #
 # exec /home/david/scripts/background.sh &
-# SSH Agent
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > ~/.ssh-agent-thing
-fi
-if [[ "$SSH_AGENT_PID" == "" ]]; then
-    eval "$(<~/.ssh-agent-thing)"
-fi
+
+# see arch wiki SSH_agents
+# keychain will manage ssh keys listed here
+ eval $(keychain --eval --quiet id_ed25519_git) # add new keys here 
+# if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+#    ssh-agent > ~/.ssh-agent-thing
+# fi
+# if [[ "$SSH_AGENT_PID" == "" ]]; then
+#    eval "$(<~/.ssh-agent-thing)"
+# fi
 export PATH=/home/david/scripts:$PATH
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
