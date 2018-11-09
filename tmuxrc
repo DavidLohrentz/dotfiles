@@ -46,6 +46,4 @@ set -g status-fg white
 set -g status-interval 60
 set -g status-left-length 30
 set -g status-left '#[fg=green][#S] #(whoami)@#H'
-# status right options
-# Added date and time to i3 status bar so right side can be blanked
-# set -g status-right "#[fg=cyan]%a, %b %d %Y %I:%M %p"
+set -g status-right "#[fg=cyan]%a, %b %d %Y %I:%M %p"
